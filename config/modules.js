@@ -44,8 +44,8 @@ function getAdditionalModulePaths(options = {}) {
   throw new Error(
     chalk.red.bold(
       "Your project's `baseUrl` can only be set to `src` or `node_modules`." +
-        ' Create React App does not support other values at this time.'
-    )
+        ' Create React App does not support other values at this time.',
+    ),
   );
 }
 
@@ -66,6 +66,17 @@ function getWebpackAliases(options = {}) {
   if (path.relative(paths.appPath, baseUrlResolved) === '') {
     return {
       src: paths.appSrc,
+      '@pages': `${paths.appSrc}/pages`,
+      '@icons': `${paths.appSrc}/assets/icons`,
+      '@images': `${paths.appSrc}/assets/images`,
+      '@utils': `${paths.appSrc}/utils`,
+      '@components': `${paths.appSrc}/components`,
+      '@containers': `${paths.appSrc}/containers`,
+      '@styles': `${paths.appSrc}/styles`,
+      '@hooks': `${paths.appSrc}/hooks`,
+      '@schema': `${paths.appSrc}/schema`,
+      '@service': `${paths.appSrc}/service`,
+      '@store': `${paths.appSrc}/store`,
     };
   }
 }
@@ -98,7 +109,7 @@ function getModules() {
 
   if (hasTsConfig && hasJsConfig) {
     throw new Error(
-      'You have both a tsconfig.json and a jsconfig.json. If you are using TypeScript please remove your jsconfig.json file.'
+      'You have both a tsconfig.json and a jsconfig.json. If you are using TypeScript please remove your jsconfig.json file.',
     );
   }
 
