@@ -1,0 +1,24 @@
+name: Linting code
+
+on:
+  push:
+    branches:
+      - main
+      - development
+  pull_request:
+    branches:
+      - main
+      - development
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install packages
+      run: yarn
+
+    - name: Run ESLint & Stylelint & Prettier
+      run: yarn run lint:fix

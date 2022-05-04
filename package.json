@@ -65,12 +65,20 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "eslint:--fix": "eslint --fix ./src/*.{js,tsx,ts}",
+    "stylelint:--fix": "stylelint ./**/*.{css,scss} !./dist/**/*.css --fix",
+    "prettier:--fix": "prettier ./src/**/*.{js,scss,pug,html,ts,tsx} --write",
+    "lint:fix": "yarn run eslint:--fix && yarn run stylelint:--fix && yarn run prettier:--fix"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+  "lint-staged": {
+    "*.(ts|tsx)": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.(css|scss)": [
+      "stylelint --fix",
+      "prettier --write"
     ]
   },
   "browserslist": {
@@ -140,5 +148,28 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.8.2",
+    "stylelint-a11y": "^1.2.3",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-no-unsupported-browser-features": "^5.0.3",
+    "stylelint-order": "^5.0.0",
+    "stylelint-prettier": "^2.0.0",
+    "stylelint-scss": "^4.2.0"
   }
 }
