@@ -1,5 +1,13 @@
 module.exports = {
-  extends: ['react-app', 'react-app/jest', 'airbnb', 'airbnb-typescript', 'airbnb/hooks', 'prettier'],
+  extends: [
+    'react-app',
+    'react-app/jest',
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   env: {
     browser: true,
     node: true,
