@@ -17,7 +17,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   parserOptions: {
-    files: ['*.ts', '*.tsx'],
+    files: ['*.js', '*.jsx'],
     ecmaVersion: 8,
     ecmaFeatures: {
       legacyDecorators: true,
