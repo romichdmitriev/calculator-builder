@@ -20,7 +20,7 @@ import Calculator from '@containers/blocks/Calculator/Calculator';
 import ConstructorParts from '@containers/blocks/ConstructorParts/ConstructorParts';
 
 // styles
-import styles from 'src/App.module.scss';
+import styles from '@components/App.module.scss';
 
 // schema
 import ConstructorElement from '@schema/Constructor';

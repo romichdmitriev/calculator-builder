@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* redux-toolkit using Immer.js */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DroppableAreas } from 'srcApp';
+import { DroppableAreas } from '@components/App';
 
 interface DraggingInfo {
   draggingId: string | null;

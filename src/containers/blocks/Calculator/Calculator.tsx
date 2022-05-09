@@ -19,7 +19,7 @@ import * as CalculatorParts from '@components/blocks';
 import { ReactComponent as AddIcon } from '@icons/drag-component.svg';
 
 // utils
-import { DroppableAreas } from 'src/App';
+import { DroppableAreas } from '@components/App';
 import { CONSTRUCTOR_ELEMENTS } from '@utils/datasets';
 
 type CalculatorProps = {
