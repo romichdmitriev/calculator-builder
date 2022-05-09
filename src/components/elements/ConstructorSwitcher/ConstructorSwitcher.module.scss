@@ -28,6 +28,14 @@
     }
   }
 
+  @media screen and (prefers-reduced-motion: reduce) {
+    &__icon {
+      color: inherit;
+      transition: none;
+      transition-delay: 0.25s;
+    }
+  }
+
   &__slideBox {
     position: absolute;
     top: 1px;
@@ -58,14 +66,6 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-  }
-
-  @media screen and (prefers-reduced-motion: reduce) {
-    &__icon {
-      color: inherit;
-      transition: none;
-      transition-delay: 0.25s;
-    }
   }
 
   &__icon {

@@ -74,7 +74,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "eslint:--fix": "eslint --fix ./src/*.{js,tsx,ts}",
-    "stylelint:--fix": "stylelint ./**/*.{css,scss} !./dist/**/*.css --fix",
+    "stylelint:--fix": "stylelint ./**/*.{css,scss} !./build/**/*.css --fix",
     "prettier:--fix": "prettier ./src/**/*.{js,scss,pug,html,ts,tsx} --write",
     "lint:fix": "yarn run eslint:--fix && yarn run stylelint:--fix && yarn run prettier:--fix",
     "storybook": "start-storybook -p 6006",

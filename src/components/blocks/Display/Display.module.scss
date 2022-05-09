@@ -23,14 +23,14 @@
     height: 100%;
     padding: 4px 8px;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
     overflow-x: scroll;
     color: $black;
     text-align: end;
     background-color: $grey-100;
     border-radius: 6px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
