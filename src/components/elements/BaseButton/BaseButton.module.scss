@@ -1,0 +1,57 @@
+@import 'src/styles/base/variables';
+@import 'src/styles/base/typography';
+
+.button {
+  @extend %typography-primary;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  min-height: 48px;
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 6px;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &_fullWidth {
+    width: 100%;
+  }
+
+  // theme
+  &_outlined {
+    border: 1px solid $grey-200;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 2px solid $pink;
+    }
+  }
+
+  &_cover {
+    color: $white;
+    background: $pink;
+    border: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.9;
+    }
+  }
+
+  // state
+  &_disabled {
+    pointer-events: none;
+    background: transparent;
+    border: none;
+  }
+
+  &_disableClick {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,88 @@
+@import 'src/styles/base/variables';
+@import 'src/styles/base/typography';
+
+.switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 243px;
+  min-height: 38px;
+  padding: 1px;
+  cursor: pointer;
+  background-color: $grey-100;
+  border-radius: 6px;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &__slideBox {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      z-index: 0;
+      width: 50%;
+      height: calc(100% - 2px);
+      background: $white;
+      border: 1px solid $grey-200;
+      border-radius: 5px;
+      transition: none;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    &__icon {
+      color: inherit;
+      transition: none;
+      transition-delay: 0.25s;
+    }
+  }
+
+  &__slideBox {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    z-index: 0;
+    width: 50%;
+    height: calc(100% - 2px);
+    background: $white;
+    border: 1px solid $grey-200;
+    border-radius: 5px;
+    transition: left 0.6s;
+  }
+
+  &__slideBox_active {
+    left: 50%;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 100%;
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    color: inherit;
+    transition: color 0.25s;
+    transition-delay: 0.3s;
+  }
+
+  &__icon_active {
+    color: $pink;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}

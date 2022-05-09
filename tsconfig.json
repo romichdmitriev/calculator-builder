@@ -3,6 +3,7 @@
     "target": "es5",
     "baseUrl": ".",
     "paths": {
+      "src*": ["src/*"],
       "@pages/*": ["src/pages/*"],
       "@icons/*": ["src/assets/icons/*"],
       "@images/*": ["src/assets/images/*"],

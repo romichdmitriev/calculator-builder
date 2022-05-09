@@ -1,0 +1,27 @@
+@media screen and (prefers-reduced-motion: reduce) {
+  .content {
+    transition: none;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 56px;
+  justify-content: space-between;
+  padding-top: 30px;
+
+  &_runtimeMode {
+    gap: 0;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .content__calculator {
+    margin: 0 auto;
+    transition: none;
+  }
+}
+
+.content_calculator {
+  margin: 0 auto;
+}

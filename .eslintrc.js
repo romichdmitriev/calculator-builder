@@ -1,5 +1,13 @@
 module.exports = {
-  extends: ['react-app', 'react-app/jest', 'airbnb', 'airbnb-typescript', 'airbnb/hooks', 'prettier'],
+  extends: [
+    'react-app',
+    'react-app/jest',
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'prettier',
+    'plugin:storybook/recommended',
+  ],
   env: {
     browser: true,
     node: true,
@@ -9,7 +17,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   parserOptions: {
-    files: ['*.ts', '*.tsx'],
+    files: ['*.js', '*.jsx'],
     ecmaVersion: 8,
     ecmaFeatures: {
       legacyDecorators: true,
