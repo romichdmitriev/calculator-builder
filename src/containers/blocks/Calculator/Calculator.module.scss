@@ -1,0 +1,90 @@
+@import 'src/styles/base/variables';
+@import 'src/styles/base/typography';
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  min-width: 243px;
+  min-height: 480px;
+
+  &_empty {
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px dashed $grey-300;
+    border-radius: 6px;
+  }
+
+  &_dragOver {
+    background-color: $blue;
+  }
+
+  &__text {
+    @extend %typography-secondary;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    max-width: 127px;
+    color: $grey-500;
+    text-align: center;
+  }
+
+  &__text_pink {
+    @extend %typography-primary;
+
+    color: $pink;
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item:after {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    visibility: hidden;
+    content: ' ';
+    background-color: $pink;
+    transition: width 0.5s, left 0.5s;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  %lineActiveTop {
+    top: -6px;
+    bottom: unset;
+    left: 0;
+    width: 100%;
+    visibility: visible;
+  }
+
+  %lineActiveBottom {
+    left: 0;
+    width: 100%;
+    visibility: visible;
+  }
+
+  &__item_line:after {
+    @extend %lineActiveBottom;
+  }
+
+  &__item_lineStart:after {
+    @extend %lineActiveTop;
+  }
+
+  &__item_lineEnd:after {
+    @extend %lineActiveBottom;
+  }
+}

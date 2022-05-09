@@ -1,0 +1,15 @@
+.Numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 240px;
+  padding: 4px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &__button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}

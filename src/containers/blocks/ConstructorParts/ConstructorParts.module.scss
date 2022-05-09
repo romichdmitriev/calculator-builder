@@ -1,0 +1,30 @@
+@import 'src/styles/base/variables';
+@import 'src/styles/base/typography';
+
+.constructor {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 1;
+  transition: all 0.5s;
+  transform: unset;
+
+  &_hidden {
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+
+  &__dragItemClone {
+    opacity: 0.5;
+    transform: none !important;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .constructor {
+    transition: none;
+  }
+}
